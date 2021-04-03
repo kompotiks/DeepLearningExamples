@@ -2,7 +2,7 @@
 
 set -e
 
-DATADIR="LJSpeech-1.1"
+DATADIR="mozilla-1"
 FILELISTSDIR="filelists"
 
 TESTLIST="$FILELISTSDIR/ljs_audio_text_test_filelist.txt"

@@ -2,15 +2,15 @@
 
 set -e
 
-DATADIR="LJSpeech-1.1"
-BZ2ARCHIVE="${DATADIR}.tar.bz2"
-ENDPOINT="http://data.keithito.com/data/speech/$BZ2ARCHIVE"
+DATADIR="mozilla-1"
+ZIPARCHIVE="${DATADIR}.zip"
+ENDPOINT="https://storage.yandexcloud.net/synthesis/$ZIPARCHIVE"
 
 if [ ! -d "$DATADIR" ]; then
   echo "dataset is missing, unpacking ..."
-  if [ ! -f "$BZ2ARCHIVE" ]; then
+  if [ ! -f "$ZIPARCHIVE" ]; then
     echo "dataset archive is missing, downloading ..."
     wget "$ENDPOINT"
   fi
-  tar jxvf "$BZ2ARCHIVE"
+  unzip "$ZIPARCHIVE"
 fi
